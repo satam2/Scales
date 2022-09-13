@@ -1,11 +1,13 @@
 void setup() {
-  size(500, 500);  //feel free to change the size
+  size(500, 500);  
   noLoop(); //stops the draw() function from repeating
 }
 void draw() {
-  //your code here
+  scale(250,250);
 }
 void scale(int x, int y) {
-  //your code here
+  fill(0,0,255);
+  noStroke();
+  ellipse(x,y,100,100);
 }
 

@@ -1,19 +1,28 @@
 void setup() {
   size(500, 500);  
-  background(220);
-  //noLoop(); //stops the draw() function from repeating
+  background(#EDE7D5);
+  //noLoop();
 }
+
+boolean shift = true;
+int r = (int)(Math.random()*256);
+int g = (int)(Math.random()*256);
+int b = (int)(Math.random()*256);
 
 void draw() {
-  for(int x =  20; x < 550; x += 70){
-    for(int y = 20; y < 550; y += 60)
-      scale(x,y);
-  }
+  for(int y = 0; y < 550; y += 60){
+    for(int x = 0; x < 550; x += 70){
+      if(shift == true)
+        scale(x+10,y);
+      else
+        scale(x-10,y);
+    } // inner loop
+    if(shift == true)
+      shift = false;
+    else
+      shift = true;
+  } // outer loop
 }
-
-int r = 234;
-int g = 200;
-int b = 31;
 
 void scale(int x, int y) {
   if(mousePressed == true){
